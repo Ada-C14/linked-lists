@@ -108,6 +108,7 @@ describe LinkedList do
       expect(@list.get_at_index(1)).must_equal 3
       expect(@list.get_at_index(2)).must_equal 2
       expect(@list.get_at_index(3)).must_equal 1
+      expect(@list.get_at_index(4)).must_be_nil # adding this test to check other end
     end
   end
 end
