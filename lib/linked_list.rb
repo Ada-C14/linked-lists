@@ -18,7 +18,7 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def get_first
-
+    return @head.next
   end
 
   # Time complexity - ?
