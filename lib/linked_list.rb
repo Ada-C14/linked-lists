@@ -60,6 +60,13 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
-
+    i = 0
+    self.each do |node|
+      if i == index
+        return node
+      end
+      i += 1
+    end
   end
+
 end
