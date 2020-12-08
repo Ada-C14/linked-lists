@@ -39,27 +39,29 @@ class LinkedList
   # Space complexity - ?
   def add_last(data)
     if @head.nil?
-      return add_first(data)
+      @head = Node.new(data)
+      return @head.data
     else
-      current = @head
-      while current != nil
-        current = current.next
-      end
+      current = self.get_last_node
       current.next = Node.new(data)
-
       return current.next.data
     end
   end
 
   # Time complexity - ?
   # Space complexity - ?
-  def get_last
+  def get_last_node
     return nil if @head.nil?
     current = @head
-    while current != nil
+    while current.next != nil
       current = current.next
     end
     return current
+  end
+
+  def get_last
+    return nil if @head.nil?
+    return get_last_node.data
   end
 
   # Time complexity - ?
