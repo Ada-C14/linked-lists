@@ -55,9 +55,21 @@ class LinkedList
   end
 
   # Time complexity - O(n)
-  # >> have to
-  # Space complexity - ?
+  # >> have to traverse list to find the node at that index
+  # Space complexity - O(1)
   def get_at_index(index)
+    return @head.data if index.zero?
+    return nil unless @head
 
+    current_ind = 0
+    current = @head
+    until current.next.nil?
+      current = current.next
+      current_ind += 1
+
+      return current.data if current_ind == index
+    end
+
+    return nil
   end
 end
