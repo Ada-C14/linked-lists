@@ -24,7 +24,14 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def length
-    return 0
+    #return 0
+    count = 0
+    current = @head
+    while current != nil
+      count += 1
+      current = current.next
+    end
+    return count
   end
 
   # Time complexity - ?
