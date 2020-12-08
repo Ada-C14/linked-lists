@@ -37,13 +37,24 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def add_last(data)
+    new_node = Node.new(value)
 
+    self.each do |node|
+      if node.@next == nil
+      node.@next = data
+      data.@next = nil
+      end
+    end
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_last
-
+    self.each do |node|
+      if node.@next == nil
+        return node
+      end
+    end
   end
 
   # Time complexity - ?
