@@ -65,6 +65,7 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
+    return nil if index > self.length
     i = 0
     self.each do |node|
       if i == index
