@@ -10,15 +10,15 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def add_first(data)
-
+    new_node = Node.new(value)
+    new_node.next = @head
+    @head = new_node
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_first
-    new_node = Node.new(value)
-    new_node.next = @head
-    @head = new_node
+
   end
 
   # Time complexity - ?
