@@ -15,19 +15,18 @@ describe LinkedList do
 
   describe 'initialize' do
     it 'can be created' do
-
       # Assert
       expect(@list).must_be_kind_of LinkedList
     end
   end
 
-  xdescribe 'add_first & get_first' do
+  describe 'add_first & get_first' do
     it 'can add values to an empty list' do
       # Act
-        @list.add_first(3)
+      @list.add_first(3)
 
-        # Assert
-        expect(@list.get_first).must_equal 3
+      # Assert
+      expect(@list.get_first).must_equal 3
     end
 
     it 'will put the last added item to the front of the list' do
@@ -46,7 +45,6 @@ describe LinkedList do
     end
 
     it 'will return `nil` for `getFirst` if the list is empty' do
-
       expect(@list.get_first).must_be_nil
     end
   end
