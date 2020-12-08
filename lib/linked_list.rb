@@ -66,12 +66,15 @@ class LinkedList
   # Space complexity - ?
   def get_at_index(index)
     return nil if index > self.length
+    current = @head
     i = 0
-    self.each do |node|
+    while current != nil
       if i == index
-        return node
+        return current.data
+      else
+        current = current.next
+        i += 1
       end
-      i += 1
     end
   end
 
