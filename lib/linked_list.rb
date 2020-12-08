@@ -24,10 +24,21 @@ class LinkedList
     return @head.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # >> traverse entire list to get full length
+  # Space complexity - O(1)
+  # >> len and current
   def length
-    return 0
+    return 0 unless @head
+
+    len = 1
+    current = @head
+    until current.next.nil?
+      current = current.next
+      len += 1
+    end
+
+    return len
   end
 
   # Time complexity - ?
