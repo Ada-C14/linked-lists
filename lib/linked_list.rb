@@ -5,6 +5,7 @@ class LinkedList
 
   def initialize
     @head = nil
+    @tail = nil
   end
 
   # Time complexity - O(1)
@@ -12,16 +13,14 @@ class LinkedList
   # >> creating one node to beginning of list
   def add_first(data)
     temp = Node.new(data)
-    temp.next = @head if @head
+    @head ? temp.next = @head : @tail = temp
     @head = temp
   end
 
   # Time complexity - O(1)
   # Space complexity - O(1)
   def get_first
-    return nil unless @head
-
-    return @head.data
+    return @head ? @head.data : nil
   end
 
   # Time complexity - O(n)
@@ -41,19 +40,22 @@ class LinkedList
     return len
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def add_last(data)
-
+    temp = Node.new(data)
+    @tail ? @tail.next = temp : @head = temp
+    @tail = temp
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def get_last
-
+    return @tail ? @tail.data : nil
   end
 
-  # Time complexity - ?
+  # Time complexity - O(n)
+  # >> have to
   # Space complexity - ?
   def get_at_index(index)
 
