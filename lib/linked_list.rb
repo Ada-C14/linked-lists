@@ -25,9 +25,9 @@ class LinkedList
   # Space complexity - O(1)
   def length
     return 0 if @head.nil?
-    nodes = 1
+    nodes = 0
     current = @head
-    until current.next.nil?
+    until current.nil?
       nodes += 1
       current = current.next
     end
