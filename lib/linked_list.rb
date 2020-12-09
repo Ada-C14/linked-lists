@@ -8,14 +8,14 @@ class LinkedList
   end
 
   # Time complexity - O(1), it's O(1) to find the head, ie the front of linked list, and add element.
-  # Space complexity - O(1), the extra variables are constant, so it's O(1).
+  # Space complexity - O(1), it uses limited variables, ie a constant, so it's O(1).
   def add_first(data)
-    if @head.nil?
-      @head = Node.new(data)
-    else
+    if @head
       new_node = Node.new(data)
-      @head.next = new_node
+      new_node.next = @head
       @head = new_node
+    else
+      @head = Node.new(data)
     end
     return @head
   end
@@ -27,10 +27,16 @@ class LinkedList
     return nil
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n), it needs to go over the whole linked list to count the length, so the time complexity is O(n).
+  # Space complexity - O(1), it uses limited variables, ie a constant, so it's O(1).
   def length
-    return 0
+    count = 0
+    current = @head
+    while current != nil
+      count += 1
+      current = current.next
+    end
+    return count
   end
 
   # Time complexity - ?
