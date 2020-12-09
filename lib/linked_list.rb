@@ -7,7 +7,7 @@ class LinkedList
     @head = nil
   end
 
-  # Time complexity - O(1), it's O(1) to find the head, ie the front of linked list, and add an element.
+  # Time complexity - O(1), because it's O(1) to find the head, and the head points to the first position. So it's O(1) to add a new element at the first position.
   # Space complexity - O(1), it uses limited variables, ie a constant, so it's O(1).
   def add_first(data)
     if @head
@@ -20,7 +20,7 @@ class LinkedList
     return @head
   end
 
-  # Time complexity - O(1), it's O(1) to find the head, ie the front of linked list, and add an element.
+  # Time complexity - O(1), because it's O(1) to find the head, and the head points to the first position. So it's O(1) to find the first position.
   # Space complexity - O(1), no extra variable is used, so it's O(1).
   def get_first
     return @head.data if @head
@@ -39,7 +39,7 @@ class LinkedList
     return count
   end
 
-  # Time complexity - O(n), it needs to go thru the whole linked list to add a new data to the last slot, so the time complexity is O(n).
+  # Time complexity - O(n), it needs to go thru the whole linked list to add a new data to the last position, so the time complexity is O(n).
   # Space complexity - O(1), it uses limited variables, ie a constant, so it's O(1).
   def add_last(data)
     if @head
