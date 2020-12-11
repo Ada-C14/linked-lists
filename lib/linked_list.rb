@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require_relative 'node'
 
 class LinkedList
@@ -21,7 +22,7 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def get_first
-    return (@head.nil? ? @head : @head.data)
+    (@head.nil? ? @head : @head.data)
   end
 
   # Time complexity - ?
@@ -35,24 +36,38 @@ class LinkedList
       current = current.next
     end
 
-    return count
+    count
+  end
+
+  def find_last
+    current = @head
+
+    current = current.next while current&.next
+
+    current
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def add_last(data)
+    last = find_last
 
+    if last.nil?
+      @head = Node.new(data)
+    else
+      new_node = Node.new(data)
+      last.next = new_node
+    end
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_last
-
+    last = find_last
+    (last.nil? ? last : last.data)
   end
 
   # Time complexity - ?
   # Space complexity - ?
-  def get_at_index(index)
-
-  end
+  def get_at_index(index); end
 end
