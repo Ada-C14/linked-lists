@@ -76,16 +76,16 @@ describe LinkedList do
       @list.add_last(2)
       expect(@list.length).must_equal 1
       expect(@list.get_last).must_equal 2
-      #
-      # @list.add_last(3)
-      # expect(@list.get_first).must_equal 2
-      # expect(@list.get_last).must_equal 3
-      # expect(@list.length).must_equal 2
-      #
-      # @list.add_last(4)
-      # expect(@list.get_first).must_equal 2
-      # expect(@list.get_last).must_equal 4
-      # expect(@list.length).must_equal 3
+
+      @list.add_last(3)
+      expect(@list.get_first).must_equal 2
+      expect(@list.get_last).must_equal 3
+      expect(@list.length).must_equal 2
+
+      @list.add_last(4)
+      expect(@list.get_first).must_equal 2
+      expect(@list.get_last).must_equal 4
+      expect(@list.length).must_equal 3
     end
 
     it "will return nil with get_last for an empty list" do
