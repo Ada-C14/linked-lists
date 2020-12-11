@@ -39,14 +39,6 @@ class LinkedList
     count
   end
 
-  def find_last
-    current = @head
-
-    current = current.next while current&.next
-
-    current
-  end
-
   # Time complexity - ?
   # Space complexity - ?
   def add_last(data)
@@ -64,7 +56,7 @@ class LinkedList
   # Space complexity - ?
   def get_last
     last = find_last
-    (last.nil? ? last : last.data)
+    return (last.nil? ? last : last.data)
   end
 
   # Time complexity - ?
@@ -83,5 +75,15 @@ class LinkedList
     end
 
     return nil
+  end
+
+  private
+
+  def find_last
+    current = @head
+
+    current = current.next while current&.next
+
+    return current
   end
 end
