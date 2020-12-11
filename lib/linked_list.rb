@@ -41,16 +41,12 @@ class LinkedList
     if @head.nil?
       self.add_first(data)
     else
-
       current = @head
-
       until current.next.nil?
         current = current.next
       end
-
       current.next = Node.new(data)
     end
-
   end
 
   # Time complexity - ?
@@ -64,12 +60,23 @@ class LinkedList
     end
 
     return current.data
-
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
+    # return the data at right index?
+    return nil if index > self.length
+    current = @head
+    counter = 0
 
+    until current.nil?
+      if counter == index
+        return current.data
+      else
+        current = current.next
+        counter += 1
+      end
+    end
   end
 end
