@@ -7,16 +7,18 @@ class LinkedList
     @head = nil
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def add_first(data)
-
+    new_node = Node.new(data, nextNode = @head)
+    @head = new_node
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def get_first
-
+    return @head.data if @head
+    return @head
   end
 
   # Time complexity - ?

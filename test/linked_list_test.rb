@@ -14,14 +14,14 @@ describe LinkedList do
   end
 
   describe 'initialize' do
-    it 'can be created' do
+    xit 'can be created' do
 
       # Assert
       expect(@list).must_be_kind_of LinkedList
     end
   end
 
-  xdescribe 'add_first & get_first' do
+  describe 'add_first & get_first' do
     it 'can add values to an empty list' do
       # Act
         @list.add_first(3)
