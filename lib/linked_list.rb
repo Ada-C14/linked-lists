@@ -55,15 +55,15 @@ class LinkedList
   def get_last
     return @head if @head.nil?
     current_node = @head
-    
+
     until current_node.next.nil?
       current_node = current_node.next
     end
     return current_node.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_at_index(index)
     current_index = 0
     current_node = @head
