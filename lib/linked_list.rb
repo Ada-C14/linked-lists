@@ -34,16 +34,31 @@ class LinkedList
     return list_length
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n); O(n) to get to last element, O(1) to insert
+  # Space complexity - O(1)
   def add_last(data)
+    last_node = Node.new(data)
 
+    unless head
+      @head = last_node unless @head
+    else
+      current_node = @head
+      until current_node.next.nil?
+        current_node = current_node.next
+      end
+      current_node.next = last_node
+    end
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n) to access last element
+  # Space complexity - O(1)
   def get_last
-
+    return @head if @head.nil?
+    current_node = @head
+    until current_node.next.nil?
+      current_node = current_node.next
+    end
+    return current_node.data
   end
 
   # Time complexity - ?
