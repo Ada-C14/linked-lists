@@ -66,10 +66,20 @@ class LinkedList
     end
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(n)
   def get_at_index(index)
+    current = @head
+    count = 0
 
-
+    while count < index
+      if current.nil?
+        return nil
+      else
+        current = current.next
+        count += 1
+      end
+    end
+    return current.data
   end
 end
