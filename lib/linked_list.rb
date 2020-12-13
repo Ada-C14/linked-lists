@@ -16,12 +16,7 @@ class LinkedList
   # Time complexity - O(1)
   # Space complexity - O(1)
   def get_first
-    if @head.nil?
-      return @head
-    else
-      return @head.data
-    end
-
+    return @head.nil?  ?  nil : @head.data
   end
 
   # Time complexity - O(n), where n = number of nodes in the list
