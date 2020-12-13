@@ -40,7 +40,7 @@ class LinkedList
     last_node = Node.new(data)
 
     unless head
-      @head = last_node unless @head
+      @head = last_node
     else
       current_node = @head
       until current_node.next.nil?
