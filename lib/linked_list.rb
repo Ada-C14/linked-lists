@@ -19,10 +19,18 @@ class LinkedList
     return @head.nil? ? @head : @head.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def length
-    return 0
+    length = 0
+    current = @head
+
+    until current.nil?
+      length += 1
+      current = current.next
+    end
+
+    return length
   end
 
   # Time complexity - ?
