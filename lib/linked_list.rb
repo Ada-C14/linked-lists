@@ -10,8 +10,8 @@ class LinkedList
   # Time complexity - O(1)--only adding one value (reassignment from nil)
   # Space complexity - O(1)--simple reassignment, not creating anything new
   def add_first(data)
-    @head = Node.new(data) #@head is now being assigned to new value (data)
-    return @head
+    @head = Node.new(data, @head) #@head is now being assigned to new value (data)
+    # return @head
   end
 
   # Time complexity - O(1)--don't have to traverse anything. Simply returning first value.
@@ -25,14 +25,14 @@ class LinkedList
   # Space complexity - ?
   def length
     return 0 if @head.nil?
-    return 1 if @head.next.nil?
-    counter = 0
     current = @head
+    counter = 0
     until current.nil?
-      current = current.next
       counter += 1
-      return counter
+      current = current.next
+
     end
+    return counter
   end
 
   # Time complexity - ?
