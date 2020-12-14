@@ -44,7 +44,6 @@ class LinkedList
       @head = new_node
     else
       current = @head
-
       until current.next.nil?
         current = current.next
       end
@@ -57,14 +56,16 @@ class LinkedList
   # Space complexity - ?
   def get_last
 
-    current = @head
+    if @head.nil?
+      return nil
+    end
 
+    current = @head
     until current.next.nil?
       current = current.next
     end
 
     return current.data
-
   end
 
   # Time complexity - ?
