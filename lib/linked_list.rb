@@ -39,43 +39,45 @@ class LinkedList
   # Time complexity O(n)--have to traverse entire linked list to find the end where we add a new node
   # Space complexity - O(1) -no new data structures added. Just adding a single entry.
   def add_last(data)
+    new_node = Node.new(data, nil)
     if @head.nil?
-      @head = Node.new(data, nil) #adding to front of list if head is nil
-    end
-
+      @head = new_node
+      else
     #loop through linked list until last item is found and then add new item
     current = @head
-    while current.next != nil
+    until current.next.nil?
       current = current.next
     end
-
-    current = Node.new(data, nil)
-    return current
+    current.next = new_node
     end
+  end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_last
     return nil if @head.nil?
     current = @head
-    while current.next != nil
+    until current.next == nil
       current = current.next
     end
     return current.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_at_index(index)
     return nil if @head.nil?
     current = @head
     counter = 0
-    while counter <= index
+    while counter < index
+      if current.nil?
+        return nil #had to handle if index doesn't exist
+      else
       current = current.next
       counter += 1
       end
-        return current.data
     end
-    # return nil
+    return current.data
   end
+end
 
