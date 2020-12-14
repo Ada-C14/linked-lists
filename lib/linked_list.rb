@@ -65,9 +65,19 @@ class LinkedList
     return @tail.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(n)
   def get_at_index(index)
+    return @head.data if index.zero?
+    current_index = 0
+    current = @head
 
+    until current.nil?
+      current = current.next
+      current_index += 1
+
+      return current.data if current_index == index
+    end
+    return nil
   end
 end
