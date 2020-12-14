@@ -1,14 +1,15 @@
 require_relative 'node'
 
 class LinkedList
-  attr_reader :head
+  attr_reader :head, :tail
 
   def initialize
     @head = nil
+    @tail = tail
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def add_first(data)
     first = Node.new(data)
 
@@ -45,16 +46,23 @@ class LinkedList
 
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def add_last(data)
+   last = Node.new(data)
 
+  @tail ? @tail.next = last : @head = last
+   @tail = last
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def get_last
+    if @tail.nil?
+      return nil
+    end
 
+    return @tail.data
   end
 
   # Time complexity - ?
