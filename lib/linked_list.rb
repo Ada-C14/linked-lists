@@ -7,8 +7,8 @@ class LinkedList
     @head = nil
    end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(n) - creating a node takes up space, right?
   def add_first(data)
     if @head
       @head = Node.new(data, @head)
@@ -23,8 +23,8 @@ class LinkedList
     return @head.nil? ? @head : @head.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def length
     return 0 if @head.nil?
 
@@ -37,8 +37,8 @@ class LinkedList
     return count
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(n) - adding a node takes space
   def add_last(data)
     if @head.nil?
       @head = Node.new(data)
