@@ -30,9 +30,19 @@ class LinkedList
 
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def length
+    count = 0
+    current = @head
+
+    while current != nil
+      count += 1
+      current = current.next
+    end
+
+    return count
+
   end
 
   # Time complexity - ?
