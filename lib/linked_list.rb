@@ -10,7 +10,9 @@ class LinkedList
   # Time complexity - O(1)--only adding one value and reassigning next to old value of head
   # Space complexity - O(1)--simple reassignment, not creating anything new (except )
   def add_first(data)
-    @head = Node.new(data, @head) #@head is now being assigned to new value (data)
+    new_node = Node.new(data)
+    new_node.next = @head
+    @head = new_node #@head is now being assigned to new value (data)
     # return @head
   end
 
@@ -27,7 +29,7 @@ class LinkedList
     return 0 if @head.nil?
     current = @head
     counter = 0
-    until current.nil?
+    while current != nil
       counter += 1
       current = current.next
     end
@@ -43,10 +45,12 @@ class LinkedList
 
     #loop through linked list until last item is found and then add new item
     current = @head
-    until current.next == nil
+    while current.next != nil
       current = current.next
     end
-    current.next = Node.new(data, nil)
+
+    current = Node.new(data, nil)
+    return current
     end
 
   # Time complexity - ?
@@ -54,7 +58,7 @@ class LinkedList
   def get_last
     return nil if @head.nil?
     current = @head
-    until current.next == nil
+    while current.next != nil
       current = current.next
     end
     return current.data
@@ -63,15 +67,15 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
+    return nil if @head.nil?
     current = @head
-    while current != nil
+    counter = 0
+    while counter <= index
       current = current.next
-      if current == index
+      counter += 1
+      end
         return current.data
-      else
-        return nil
     end
     # return nil
   end
-  end
-end
+
