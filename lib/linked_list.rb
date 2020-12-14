@@ -72,5 +72,13 @@ class LinkedList
   # Space complexity - ?
   def get_at_index(index)
 
+    current = @head
+
+    index.times do
+      return nil if current.nil?
+      current = current.next
+    end
+
+    return current.data
   end
 end
