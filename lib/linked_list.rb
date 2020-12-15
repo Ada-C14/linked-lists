@@ -1,16 +1,23 @@
 require_relative 'node'
 
 class LinkedList
-  attr_reader :head
+
+  # length method:
+  # Time complexity - O(1)
+  # Space complexity - O(1)
+  attr_reader :head, :length
 
   def initialize
     @head = nil
+    @last = nil
+    @length = 0
   end
 
   # Time complexity - O(1)
   # Space complexity - O(1)
   def add_first(data)
     @head = Node.new(data, @head)
+    @length += 1
   end
 
   # Time complexity - O(1)
@@ -20,27 +27,25 @@ class LinkedList
     return @head.data
   end
 
-  # Time complexity - O(n)
-  # Space complexity - O(n)
-  def length(node = @head, len = 0)
-    return len if node.nil?
-    return length(node.next, len + 1)
+
+  # Time complexity - O(1)
+  # Space complexity - O(1)
+  def add_last(data)
+    if @last.nil?
+      add_first(data)
+      @last = @head
+    else
+      @last.next = Node.new(data, nil)
+      @last = @last.next
+      @length += 1
+    end
   end
 
-  # Time complexity - O(n)
-  # Space complexity - O(n)
-  def add_last(data, node = @head)
-    add_first(data) and return if node.nil?
-    node.next = Node.new(data, nil) and return if node.next.nil?
-    add_last(data, node.next)
-  end
-
-  # Time complexity - O(n)
-  # Space complexity - O(n)
-  def get_last(node = @head)
-    return node if node.nil?
-    return node.data if node.next.nil?
-    return get_last(node.next)
+  # Time complexity - O(1)
+  # Space complexity - O(1)
+  def get_last
+    return nil if @last.nil?
+    return @last.data
   end
 
   # Time complexity - O(n)
