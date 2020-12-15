@@ -19,8 +19,8 @@ class LinkedList
     return @head.nil? ? nil : @head.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def length
     count = 0
     current = @head
@@ -31,16 +31,31 @@ class LinkedList
     return count
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def add_last(data)
-
+    if @head.nil?
+      @head = Node.new(data)
+    else
+      current = @head
+      until current.next.nil?
+        current = current.next
+      end
+      current.next = Node.new(data)
+    end
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_last
+    return nil if @head.nil?
 
+    current = @head
+    until current.next.nil?
+      current = current.next
+    end
+
+    return current.data
   end
 
   # Time complexity - ?
