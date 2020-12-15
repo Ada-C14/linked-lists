@@ -61,12 +61,14 @@ class LinkedList
   # Time complexity - O(n)
   # Space complexity - O(1)
   def get_at_index(index)
-    current = @head
-    while index > 0
-      return nil if current.nil?
-      current = current.next
-      index -= 1
-    end
-    return current.data
+    index_helper(current = @head, index)
+  end
+
+  def index_helper(current, index)
+    return nil if current.nil?
+    return current.data if index.zero?
+
+    current = current.next
+    index_helper(current, index - 1)
   end
 end
