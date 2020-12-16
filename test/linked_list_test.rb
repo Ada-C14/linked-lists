@@ -13,6 +13,27 @@ describe LinkedList do
     @list = LinkedList.new
   end
 
+
+  xdescribe 'muHA HA HA' do
+    it "AYESHA testing!!!" do
+      @list.add_first(3)
+      @list.add_first(25)
+      @list.add_first(100)
+      # @list.print()
+      # @list.add_first(4)
+      # expect(@list.get_first). must_equal 4
+      # expect(@list.length).must_equal 2
+
+
+      @list.add_last(200)
+      @list.print()
+      expect(@list.length).must_equal 4
+      expect(@list.get_last).must_equal 200
+      # expect(@list.get_at_index(0)).must_equal 100
+    end
+  end
+
+
   describe 'initialize' do
     it 'can be created' do
 
@@ -21,7 +42,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe 'add_first & get_first' do
+  describe 'add_first & get_first' do
     it 'can add values to an empty list' do
       # Act
         @list.add_first(3)
@@ -51,7 +72,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe "length" do
+  describe "length" do
     it "will return 0 for an empty list" do
       expect(@list.length).must_equal 0
     end
@@ -66,7 +87,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe "addLast & getLast" do
+  describe "addLast & getLast" do
     it "will add to the front if the list is empty" do
       @list.add_last(1)
       expect(@list.get_first).must_equal 1
@@ -93,7 +114,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe 'get_at_index' do
+  describe 'get_at_index' do
     it 'returns nil if the index is outside the bounds of the list' do
       expect(@list.get_at_index(3)).must_be_nil
     end
