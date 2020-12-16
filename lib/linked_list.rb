@@ -54,11 +54,15 @@ class LinkedList
   # Time complexity - o(n) - n being length of list 
   # Space complexity - o(1) 
   def get_last
-    current = head
-    until current.next.nil?
-      current = current.next
+    if @head.nil? 
+      return nil
+    else
+      current = @head
+      until current.next.nil?
+        current = current.next
+      end
+        return current.data
     end
-      return current.data
   end 
 
 
