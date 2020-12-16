@@ -8,7 +8,7 @@ class LinkedList
   end
 
   # Time complexity - O(1)
-  # Space complexity - O(n)
+  # Space complexity - O(1)
   def add_first(data)
     @head = Node.new(data, @head)
   end
