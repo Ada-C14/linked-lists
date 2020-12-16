@@ -20,7 +20,7 @@ class LinkedList
   end
 
   # Time complexity - O(n)
-  # Space complexity - O(n)
+  # Space complexity - O(1)
   def length
     counter = 0
 
@@ -34,17 +34,41 @@ class LinkedList
     return counter
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def add_last(data)
+    new_node = Node.new(data)
+    previous = nil
+    current = @head
 
+    while current != nil
+      previous = current
+      current = current.next
+    end
+
+    if previous == nil
+      @head = new_node
+    else
+      previous.next = new_node
+    end
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def get_last
-    current = head
+    previous = nil
+    current = @head
 
+    while current != nil
+      previous = current
+      current = current.next
+    end
+
+    if previous == nil
+      return nil
+    else
+      return previous.data
+    end
   end
 
   # Time complexity - ?
