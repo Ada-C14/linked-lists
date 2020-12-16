@@ -8,7 +8,7 @@ class LinkedList
   end
 
   # Time complexity - O(1)
-  # Space complexity - O(1) (or is it 0(n) because 'data' could be of varying sizes?)
+  # Space complexity - O(1)
   def add_first(data)
     new_node = Node.new(data)
     new_node.next = @head
@@ -22,7 +22,6 @@ class LinkedList
     if @head
       return @head.data
     end
-
     return nil
   end
 
@@ -35,12 +34,11 @@ class LinkedList
       count += 1
       current = current.next
     end
-
     return count
   end
 
   # Time complexity - O(n)
-  # Space complexity - O(1) (or is it 0(n) because 'data' could be of varying sizes?)
+  # Space complexity - O(1)
   def add_last(data)
     if find_last 
       last = self.find_last
@@ -48,7 +46,6 @@ class LinkedList
     else
       @head = Node.new(data)
     end
-
   end
 
   # Time complexity - O(n)
