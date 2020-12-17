@@ -89,7 +89,6 @@ class LinkedList
   # Time complexity - 0(n)
   # Space complexity - 0(1)
   def get_at_index(index)
-    # return nil if index > self.length # self this optional in ruby
     current = @head
     count = 0
 
@@ -105,11 +104,11 @@ class LinkedList
     return current.data
   end
 
-  def print_node
-    current = @head
-    until current.nil?
-      puts current # print node before increment
-      current = current.next
-    end
-  end
+  # def print_node
+  #   current = @head
+  #   until current.nil?
+  #     puts current # print node before increment
+  #     current = current.next
+  #   end
+  # end
 end
