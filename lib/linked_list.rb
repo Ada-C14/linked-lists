@@ -28,7 +28,7 @@ class LinkedList
   end
 
   # Time complexity - 0(n)
-  # Space complexity - 0(n)
+  # Space complexity - 0(1)
   def length
     if @head == nil
       return 0
@@ -63,25 +63,53 @@ class LinkedList
     end
 
     current.next = new_node
-    return current.next
+    # return current.next
 
   end
 
-  # Time complexity - 0(1)
+  # Time complexity - 0(n))
   # Space complexity - 0(1)
   def get_last
+
+    current = @head
+
     if @head == nil
       return nil
     end
 
-    # current = add_last(data)
+    until current.next.nil? # the next value/node of current is nil
+      current = current.next # traverse through the linked list til the last value
+    end
+
+    return current.data  
+
 
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - 0(n)
+  # Space complexity - 0(1)
   def get_at_index(index)
+    # return nil if index > self.length # self this optional in ruby
+    current = @head
+    count = 0
 
+    until current.nil? || count == index
+      current = current.next
+      count += 1
+    end
 
+    if current.nil?
+      return nil
+    end
+    
+    return current.data
+  end
+
+  def print_node
+    current = @head
+    until current.nil?
+      puts current # print node before increment
+      current = current.next
+    end
   end
 end
