@@ -1,5 +1,5 @@
 # Starting from a minimalist image
-FROM ruby:2.6
+FROM ruby:2.7
 # Reference for help contact me
 LABEL maintainer="chris@adadev.org"
 
